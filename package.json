@@ -1,7 +1,7 @@
 {
   "name": "in-the-cave",
   "version": "1.0.0",
-  "description": "RPG - Bute ce foutu dragon",
+  "description": "RPG game where you explore a cave and fight a dragon.",
   "main": "script.js",
   "scripts": {},
   "keywords": [
