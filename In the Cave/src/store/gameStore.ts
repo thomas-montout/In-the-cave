@@ -37,11 +37,6 @@ type GameState = {
 
   // Fin de jeu
   restart: () => void;
-
-  // Easter egg
-  easterEgg: () => void;
-  pickTwo: () => void;
-  pickEight: () => void;
 };
 
 function goToLocation(locationIndex: number): Partial<GameState> {
@@ -270,49 +265,4 @@ export const useGameStore = create<GameState>((set, get) => ({
     });
   },
 
-  // --- Easter egg ---
-  easterEgg: () => set(goToLocation(7)),
-
-  pickTwo: () => {
-    pick(2, set, get);
-  },
-
-  pickEight: () => {
-    pick(8, set, get);
-  },
 }));
-
-function pick(
-  guess: number,
-  set: (partial: Partial<GameState>) => void,
-  get: () => GameState,
-) {
-  const numbers: number[] = [];
-  while (numbers.length < 10) {
-    numbers.push(Math.floor(Math.random() * 11));
-  }
-
-  let resultText =
-    "Vous avez choisi " + guess + ". Voici les nombres aléatoires :\n";
-  for (let i = 0; i < 10; i++) {
-    resultText += numbers[i] + "\n";
-  }
-
-  if (numbers.includes(guess)) {
-    resultText += "Correct ! Vous gagnez 20 or petit(e) chanceux !";
-    set({ text: resultText, gold: get().gold + 20 });
-  } else {
-    resultText += "Incorrect ! Vous perdez 10 points de vie !";
-    const newHealth = get().health - 10;
-    if (newHealth <= 0) {
-      set({
-        health: 0,
-        text: locations[5].text,
-        currentLocation: 5,
-        showMonsterStats: false,
-      });
-    } else {
-      set({ text: resultText, health: newHealth });
-    }
-  }
-}

@@ -7,6 +7,7 @@ export type Monster = {
   name: string;
   level: number;
   health: number;
+  image: string;
 };
 
 export type Location = {
@@ -14,4 +15,5 @@ export type Location = {
   buttonText: [string, string, string];
   buttonActions: [string, string, string];
   text: string;
+  image: string;
 };

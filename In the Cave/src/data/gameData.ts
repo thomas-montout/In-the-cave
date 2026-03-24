@@ -1,4 +1,14 @@
 import type { Weapon, Monster, Location } from "../types/game";
+import dragon from "../assets/dragon.png";
+import slime from "../assets/trucgluant.png";
+import beast from "../assets/betechelou.png";
+import village from "../assets/village.png";
+import store from "../assets/boutique.png";
+import cave from "../assets/cave.png";
+import fight from "../assets/fight.png";
+import monsterDeath from "../assets/monstremort.png";
+import lose from "../assets/lose.png";
+import win from "../assets/win.png";
 
 export const weapons: Weapon[] = [
   { name: "Bâton", power: 5 },
@@ -8,9 +18,14 @@ export const weapons: Weapon[] = [
 ];
 
 export const monsters: Monster[] = [
-  { name: "Gros truc gluant", level: 2, health: 15 },
-  { name: "Bête chelou à grandes dents", level: 8, health: 60 },
-  { name: "Dragon immense", level: 20, health: 300 },
+  { name: "Gros truc gluant", level: 2, health: 15, image: slime },
+  {
+    name: "Bête chelou à grandes dents",
+    level: 8,
+    health: 60,
+    image: beast,
+  },
+  { name: "Dragon immense", level: 20, health: 300, image: dragon },
 ];
 
 export const locations: Location[] = [
@@ -23,6 +38,7 @@ export const locations: Location[] = [
     ],
     buttonActions: ["goStore", "goCave", "fightDragon"],
     text: 'Vous êtes sur la place du village. Vous voyez un panneau qui dit "Magasin".',
+    image: village,
   },
   {
     name: "magasin",
@@ -32,7 +48,8 @@ export const locations: Location[] = [
       "Aller à la place du village",
     ],
     buttonActions: ["buyHealth", "buyWeapon", "goTown"],
-    text: "Vous entrez dans le magasin.",
+    text: "Vous entrez dans le magasin et observer les nombreux objets en vente. Vous pouvez acheter de la vie ou une nouvelle arme pour vous aider dans votre aventure.",
+    image: store,
   },
   {
     name: "cave",
@@ -42,13 +59,15 @@ export const locations: Location[] = [
       "Aller à la place du village",
     ],
     buttonActions: ["fightSlime", "fightBeast", "goTown"],
-    text: "Vous entrez dans la grotte. Vous voyez quelques monstres.",
+    text: "Vous entrez dans la grotte sombre et humide. Vous entendez des bruits étranges et voyez des ombres bouger !",
+    image: cave,
   },
   {
     name: "fight",
     buttonText: ["Attaquer", "Esquiver", "Fuir"],
     buttonActions: ["attack", "dodge", "goTown"],
-    text: "Vous combattez un monstre.",
+    text: "Vous combattez un monstre effrayant ! Choisissez votre action avec soin.",
+    image: fight,
   },
   {
     name: "kill monster",
@@ -57,25 +76,22 @@ export const locations: Location[] = [
       "Aller à la place du village",
       "Aller à la place du village",
     ],
-    buttonActions: ["goTown", "goTown", "easterEgg"],
+    buttonActions: ["goTown", "goTown", "goTown"],
     text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
+    image: monsterDeath,
   },
   {
     name: "lose",
     buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
     buttonActions: ["restart", "restart", "restart"],
     text: "Vous êtes mort. ☠",
+    image: lose,
   },
   {
     name: "win",
     buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
     buttonActions: ["restart", "restart", "restart"],
-    text: "Vous avez vaincu le dragon ! VOUS GAGNEZ LE JEU ! 🎉",
-  },
-  {
-    name: "easter egg",
-    buttonText: ["2", "8", "Aller à la place du village ?"],
-    buttonActions: ["pickTwo", "pickEight", "goTown"],
-    text: "Vous trouvez un jeu secret. Choisissez un nombre ci-dessus. Dix nombres seront choisis au hasard entre 0 et 10. Si le nombre que vous choisissez correspond à l'un des nombres aléatoires, vous gagnez !",
+    text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
+    image: win,
   },
 ];

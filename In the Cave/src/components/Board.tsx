@@ -1,12 +1,12 @@
 import React from "react";
 
-type BoardProps = {
+interface BoardProps {
   children: React.ReactNode;
-};
+}
 
 function Board({ children }: BoardProps) {
   return (
-    <div className="flex flex-row justify-between items-center m-4 p-5 border-1 border-solid">
+    <div className="flex flex-row justify-between items-center m-4 p-5 border border-solid">
       {children}
     </div>
   );
