@@ -6,7 +6,7 @@ interface ScreenProps {
 
 function Screen({ children }: ScreenProps) {
   return (
-    <div className="my-40 mx-80 h-100 border border-gray-400 flex flex-col justify-between bg-gray-300">
+    <div className="my-25 mx-80 mb-2 h-100 flex flex-col justify-between bg-gray-300">
       {children}
     </div>
   );

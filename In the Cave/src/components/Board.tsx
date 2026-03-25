@@ -6,9 +6,7 @@ interface BoardProps {
 
 function Board({ children }: BoardProps) {
   return (
-    <div className="flex flex-row justify-between items-center m-4 p-5 border border-solid">
-      {children}
-    </div>
+    <div className="flex flex-col space-y-4 p-4 bg-gray-800">{children}</div>
   );
 }
 

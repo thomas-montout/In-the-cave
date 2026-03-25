@@ -1,6 +1,6 @@
 function Background({ children }: { children: React.ReactNode }) {
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black z-0 overflow-hidden">
+    <div className="fixed top-0 left-0 w-full h-full bg-neutral-900 z-0 overflow-hidden">
       {[...Array(12)].map((_, i) => (
         <div
           key={i}
