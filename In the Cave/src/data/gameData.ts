@@ -5,10 +5,10 @@ import beast from "../assets/betechelou.png";
 import village from "../assets/village.png";
 import store from "../assets/boutique.png";
 import cave from "../assets/cave.png";
-import fight from "../assets/fight.png";
-import monsterDeath from "../assets/monstremort.png";
-import lose from "../assets/lose.png";
-import win from "../assets/win.png";
+// import fight from "../assets/fight.png";
+// import monsterDeath from "../assets/monstremort.png";
+// import lose from "../assets/lose.png";
+// import win from "../assets/win.png";
 
 export const weapons: Weapon[] = [
   { name: "Bâton", power: 5 },
@@ -37,7 +37,7 @@ export const locations: Location[] = [
       "Combattre le dragon",
     ],
     buttonActions: ["goStore", "goCave", "fightDragon"],
-    text: 'Vous êtes sur la place du village. Vous voyez un panneau qui dit "Magasin".',
+    text: "Bienvenue à Troupomé.\n Un dragon terrorise le village mais il est très puissant !\n Vous pouvez explorer le magasin pour vous préparer ou tenter votre chance dans la grotte pour gagner de l'expérience.",
     image: village,
   },
   {
@@ -48,50 +48,50 @@ export const locations: Location[] = [
       "Aller à la place du village",
     ],
     buttonActions: ["buyHealth", "buyWeapon", "goTown"],
-    text: "Vous entrez dans le magasin et observer les nombreux objets en vente. Vous pouvez acheter de la vie ou une nouvelle arme pour vous aider dans votre aventure.",
+    text: "Vous entrez dans le magasin et observer quelques bricoles. \nVous pouvez acheter de la vie ou une nouvelle arme pour vous aider dans votre aventure.",
     image: store,
   },
   {
     name: "cave",
     buttonText: [
       "Combattre le gros truc gluant",
-      "Combattre la bête chelou à grandes dents",
+      "Combattre la bête à grandes dents",
       "Aller à la place du village",
     ],
     buttonActions: ["fightSlime", "fightBeast", "goTown"],
     text: "Vous entrez dans la grotte sombre et humide. Vous entendez des bruits étranges et voyez des ombres bouger !",
     image: cave,
   },
-  {
-    name: "fight",
-    buttonText: ["Attaquer", "Esquiver", "Fuir"],
-    buttonActions: ["attack", "dodge", "goTown"],
-    text: "Vous combattez un monstre effrayant ! Choisissez votre action avec soin.",
-    image: fight,
-  },
-  {
-    name: "kill monster",
-    buttonText: [
-      "Aller à la place du village",
-      "Aller à la place du village",
-      "Aller à la place du village",
-    ],
-    buttonActions: ["goTown", "goTown", "goTown"],
-    text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
-    image: monsterDeath,
-  },
-  {
-    name: "lose",
-    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-    buttonActions: ["restart", "restart", "restart"],
-    text: "Vous êtes mort. ☠",
-    image: lose,
-  },
-  {
-    name: "win",
-    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-    buttonActions: ["restart", "restart", "restart"],
-    text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
-    image: win,
-  },
+  // {
+  //   name: "fight",
+  //   buttonText: ["Attaquer", "Esquiver", "Fuir"],
+  //   buttonActions: ["attack", "dodge", "goTown"],
+  //   text: "Vous combattez un monstre effrayant ! Choisissez votre action avec soin.",
+  //   image: fight,
+  // },
+  // {
+  //   name: "kill monster",
+  //   buttonText: [
+  //     "Aller à la place du village",
+  //     "Aller à la place du village",
+  //     "Aller à la place du village",
+  //   ],
+  //   buttonActions: ["goTown", "goTown", "goTown"],
+  //   text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
+  //   image: monsterDeath,
+  // },
+  // {
+  //   name: "lose",
+  //   buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
+  //   buttonActions: ["restart", "restart", "restart"],
+  //   text: "Vous êtes mort. ☠",
+  //   image: lose,
+  // },
+  // {
+  //   name: "win",
+  //   buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
+  //   buttonActions: ["restart", "restart", "restart"],
+  //   text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
+  //   image: win,
+  // },
 ];
