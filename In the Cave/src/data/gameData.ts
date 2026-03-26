@@ -59,39 +59,39 @@ export const locations: Location[] = [
       "Aller à la place du village",
     ],
     buttonActions: ["fightSlime", "fightBeast", "goTown"],
-    text: "Vous entrez dans la grotte sombre et humide. Vous entendez des bruits étranges et voyez des ombres bouger !",
+    text: "Vous entrez dans la grotte sombre et humide. \nVous entendez des bruits étranges et voyez des ombres bouger !",
     image: cave,
   },
-  // {
-  //   name: "fight",
-  //   buttonText: ["Attaquer", "Esquiver", "Fuir"],
-  //   buttonActions: ["attack", "dodge", "goTown"],
-  //   text: "Vous combattez un monstre effrayant ! Choisissez votre action avec soin.",
-  //   image: fight,
-  // },
-  // {
-  //   name: "kill monster",
-  //   buttonText: [
-  //     "Aller à la place du village",
-  //     "Aller à la place du village",
-  //     "Aller à la place du village",
-  //   ],
-  //   buttonActions: ["goTown", "goTown", "goTown"],
-  //   text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
-  //   image: monsterDeath,
-  // },
-  // {
-  //   name: "lose",
-  //   buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-  //   buttonActions: ["restart", "restart", "restart"],
-  //   text: "Vous êtes mort. ☠",
-  //   image: lose,
-  // },
-  // {
-  //   name: "win",
-  //   buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-  //   buttonActions: ["restart", "restart", "restart"],
-  //   text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
-  //   image: win,
-  // },
+  {
+    name: "fight",
+    buttonText: ["Attaquer", "Esquiver", "Fuir"],
+    buttonActions: ["attack", "dodge", "goTown"],
+    text: "Vous combattez un monstre effrayant ! Choisissez votre action avec soin.",
+    image: "", // L'image du combat sera définie dynamiquement en fonction du monstre affronté
+  },
+  {
+    name: "kill monster",
+    buttonText: [
+      "Aller à la place du village",
+      "Aller à la place du village",
+      "Aller à la place du village",
+    ],
+    buttonActions: ["goTown", "goTown", "goTown"],
+    text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
+    image: "", // L'image de la mort du monstre sera définie dynamiquement en fonction du monstre affronté
+  },
+  {
+    name: "lose",
+    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
+    buttonActions: ["restart", "restart", "restart"],
+    text: "Vous êtes mort. ☠",
+    image: "", // L'image de la défaite sera définie dynamiquement en fonction du monstre affronté
+  },
+  {
+    name: "win",
+    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
+    buttonActions: ["restart", "restart", "restart"],
+    text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
+    image: "", // L'image de la victoire sera définie dynamiquement en fonction du monstre affronté
+  },
 ];
