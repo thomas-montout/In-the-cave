@@ -78,4 +78,3 @@ La structure et les fonctionnalités sont susceptibles d’évoluer.
 
 Thomas Montout  
 Étudiant en BTS SIO SLAM  
-En formation et en montée en compétences
