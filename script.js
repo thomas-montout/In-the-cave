@@ -36,7 +36,7 @@ const monsters = [
     health: 60,
   },
   {
-    name: "Dragon",
+    name: "Dragon immense",
     level: 20,
     health: 300,
   },
