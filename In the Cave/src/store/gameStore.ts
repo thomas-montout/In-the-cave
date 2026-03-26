@@ -164,7 +164,7 @@ export const useGameStore = create<GameState>((set, get) => ({
     // Dégâts du monstre
     const monsterAttack = monster.level * 5 - Math.floor(Math.random() * xp);
     const damage = monsterAttack > 0 ? monsterAttack : 0;
-    let newHealth = health - damage;
+    const newHealth = health - damage;
 
     // Dégâts au monstre
     const isHit = Math.random() > 0.2 || health < 20;
@@ -180,11 +180,11 @@ export const useGameStore = create<GameState>((set, get) => ({
       newMonsterHealth -=
         weapons[currentWeapon].power + Math.floor(Math.random() * xp) + 1;
     } else {
-      attackText += " Vous avez raté miskine.";
+      attackText += " Vous avez raté.";
     }
 
     // Arme qui casse (10% de chance)
-    let newInventory = [...inventory];
+    const newInventory = [...inventory];
     let newCurrentWeapon = currentWeapon;
     if (Math.random() <= 0.1 && newInventory.length !== 1) {
       attackText += " Votre " + newInventory.pop() + " se casse.";
