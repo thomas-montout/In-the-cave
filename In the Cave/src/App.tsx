@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useGameStore } from "./store/gameStore";
-import { locations } from "./data/gameData";
+import { locations, monsters } from "./data/gameData";
 import titleImage from "./assets/minia-inthecave.jpg";
 import Stats from "./Components/Stats";
+import MonsterStats from "./Components/MonsterStats";
 import Screen from "./Components/Screen";
 import Board from "./Components/Board";
-// import GameText from "./Components/GameText";
 import Controls from "./Components/Controls";
 import "./index.css";
 import Background from "./Components/Background";
@@ -15,7 +15,10 @@ function App() {
   const health = useGameStore((state) => state.health);
   const gold = useGameStore((state) => state.gold);
   const xp = useGameStore((state) => state.xp);
+  const text = useGameStore((state) => state.text);
   const currentLocation = useGameStore((state) => state.currentLocation);
+  const fighting = useGameStore((state) => state.fighting);
+  const showMonsterStats = useGameStore((state) => state.showMonsterStats);
 
   if (!started) {
     return (
@@ -47,15 +50,25 @@ function App() {
     <Background>
       <Screen>
         <Stats health={health} gold={gold} xp={xp} />
+        {showMonsterStats && fighting !== undefined && (
+          <MonsterStats
+            level={monsters[fighting].level}
+            health={monsters[fighting].health}
+          />
+        )}
         <img
-          src={locations[currentLocation].image}
+          src={
+            showMonsterStats
+              ? monsters[fighting].image
+              : locations[currentLocation].image
+          }
           alt="Location"
           className="w-full h-full object-cover"
         />
         <Board>
           <Controls />
           <p className="text-white font-mono tracking-widest leading-relaxed text-sm whitespace-pre-line">
-            {locations[currentLocation].text}
+            {text}
           </p>
         </Board>
       </Screen>
