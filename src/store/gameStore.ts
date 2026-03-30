@@ -195,8 +195,8 @@ export const useGameStore = create<GameState>((set, get) => ({
     if (newHealth <= 0) {
       set({
         health: 0,
-        text: locations[5].text,
-        currentLocation: 5,
+        text: locations[6].text,
+        currentLocation: 6, // lose
         showMonsterStats: false,
         inventory: newInventory,
         currentWeapon: newCurrentWeapon,
@@ -206,25 +206,36 @@ export const useGameStore = create<GameState>((set, get) => ({
 
     // Vérifier mort du monstre
     if (newMonsterHealth <= 0) {
-      if (fighting === 2) {
-        // Dragon vaincu = victoire
+      const goldGain = Math.floor(monster.level * 6.7);
+      if (fighting === 0) {
+        // Slime vaincu
         set({
           health: newHealth,
-          text: locations[6].text,
-          currentLocation: 6,
+          gold: get().gold + goldGain,
+          xp: xp + monster.level,
+          text: locations[5].text,
+          currentLocation: 5, // kill slime
           showMonsterStats: false,
           inventory: newInventory,
           currentWeapon: newCurrentWeapon,
         });
-      } else {
-        // Monstre vaincu
-        const goldGain = Math.floor(monster.level * 6.7);
+      } else if (fighting === 1) {
+        // Bête vaincue
         set({
           health: newHealth,
           gold: get().gold + goldGain,
           xp: xp + monster.level,
           text: locations[4].text,
-          currentLocation: 4,
+          currentLocation: 4, // kill beast
+          showMonsterStats: false,
+          inventory: newInventory,
+          currentWeapon: newCurrentWeapon,
+        });
+      } else if (fighting === 2) {
+        // Dragon vaincu (victoire)
+        set({
+          text: locations[7].text,
+          currentLocation: 7, // win
           showMonsterStats: false,
           inventory: newInventory,
           currentWeapon: newCurrentWeapon,

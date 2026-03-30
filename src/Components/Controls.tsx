@@ -37,26 +37,16 @@ function Controls() {
 
   return (
     <div className="flex flex-row gap-4 ">
-      <button
-        className="flex-1 py-1 bg-gray-700 text-white font-mono tracking-widest text-xs border border-gray-600 hover:bg-yellow-900 transition-colors duration-300"
-        onClick={actions[buttonActions[0]]}
-      >
-        {locations[currentLocation].buttonText[0]}
-      </button>
-      <button
-        className="flex-1 py-1 bg-gray-700 text-white font-mono tracking-widest text-xs border border-gray-600 hover:bg-yellow-900 transition-colors duration-300"
-        onClick={actions[buttonActions[1]]}
-      >
-        {locations[currentLocation].buttonText[1]}
-      </button>
-      <button
-        className="flex-1 py-1 bg-gray-700 text-white font-mono tracking-widest text-xs border border-gray-600 hover:bg-yellow-900 transition-colors duration-300"
-        onClick={actions[buttonActions[2]]}
-      >
-        {locations[currentLocation].buttonText[2]}
-      </button>
+      {locations[currentLocation].buttonText.map((text, idx) => (
+        <button
+          key={idx}
+          className="flex-1 py-1 bg-gray-700 text-white font-mono tracking-widest text-xs border border-gray-600 hover:bg-yellow-900 transition-colors duration-300"
+          onClick={actions[buttonActions[idx]]}
+        >
+          {text}
+        </button>
+      ))}
     </div>
   );
 }
-
 export default Controls;

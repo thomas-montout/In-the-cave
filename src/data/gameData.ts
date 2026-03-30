@@ -5,10 +5,10 @@ import beast from "../assets/betechelou.png";
 import village from "../assets/village.png";
 import store from "../assets/boutique.png";
 import cave from "../assets/cave.png";
-// import fight from "../assets/fight.png";
-// import monsterDeath from "../assets/monstremort.png";
-// import lose from "../assets/lose.png";
-// import win from "../assets/win.png";
+import beastDead from "../assets/betecheloumorte.png";
+import slimeDead from "../assets/trucgluantmort.png";
+import lose from "../assets/defaite.png";
+import win from "../assets/victoire.png";
 
 export const weapons: Weapon[] = [
   { name: "Bâton", power: 5 },
@@ -70,28 +70,39 @@ export const locations: Location[] = [
     image: "", // L'image du combat sera définie dynamiquement en fonction du monstre affronté
   },
   {
-    name: "kill monster",
+    name: "kill beast",
     buttonText: [
+      "Retourner à l'entrée de la grotte",
       "Aller à la place du village",
-      "Aller à la place du village",
-      "Aller à la place du village",
+      "Combattre le dragon",
     ],
-    buttonActions: ["goTown", "goTown", "goTown"],
+    buttonActions: ["goCave", "goTown", "fightDragon"],
     text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
-    image: "", // L'image de la mort du monstre sera définie dynamiquement en fonction du monstre affronté
+    image: beastDead,
+  },
+  {
+    name: "kill slime",
+    buttonText: [
+      "Retourner à l'entrée de la grotte",
+      "Aller à la place du village",
+      "Combattre le dragon",
+    ],
+    buttonActions: ["goCave", "goTown", "fightDragon"],
+    text: "Le monstre crie \"Arg!\" alors qu'il meurt. Vous gagnez des points d'expérience et trouvez de l'or.",
+    image: slimeDead,
   },
   {
     name: "lose",
-    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-    buttonActions: ["restart", "restart", "restart"],
+    buttonText: ["REJOUER"],
+    buttonActions: ["restart"],
     text: "Vous êtes mort. ☠",
-    image: "", // L'image de la défaite sera définie dynamiquement en fonction du monstre affronté
+    image: lose,
   },
   {
     name: "win",
-    buttonText: ["REJOUER?", "REJOUER?", "REJOUER?"],
-    buttonActions: ["restart", "restart", "restart"],
-    text: "Vous avez vaincu le dragon et sauvé le village ! 🎉",
-    image: "", // L'image de la victoire sera définie dynamiquement en fonction du monstre affronté
+    buttonText: ["REJOUER"],
+    buttonActions: ["restart"],
+    text: "Vous avez vaincu le dragon et sauvé le village !",
+    image: win,
   },
 ];

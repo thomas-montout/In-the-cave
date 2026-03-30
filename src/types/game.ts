@@ -12,8 +12,8 @@ export type Monster = {
 
 export type Location = {
   name: string;
-  buttonText: [string, string, string];
-  buttonActions: [string, string, string];
+  buttonText: string[];
+  buttonActions: string[];
   text: string;
   image: string;
 };
