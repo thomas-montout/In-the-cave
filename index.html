@@ -1,46 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="./styles.css" />
-    <title>in the Cave</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>in-the-cave</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="game">
-      <div id="stats">
-        <span class="stat"
-          >XP: <strong><span id="xpText">0</span></strong></span
-        >
-        <span class="stat"
-          >Vie: <strong><span id="healthText">100</span></strong></span
-        >
-        <span class="stat"
-          >Or: <strong><span id="goldText">50</span></strong></span
-        >
-      </div>
-      <div id="controls">
-        <button id="button1">Aller au magasin</button>
-        <button id="button2">Aller à la grotte</button>
-        <button id="button3">Combattre le dragon</button>
-      </div>
-      <div id="monsterStats">
-        <span class="stat"
-          >Nom du monstre: <strong><span id="monsterName"></span></strong
-        ></span>
-        <span class="stat"
-          >Vie: <strong><span id="monsterHealth"></span></strong
-        ></span>
-      </div>
-      <div id="text">
-        Bienvenue dans "Bute ce foutu dragon". Vous devez vaincre le dragon qui
-        empêche les gens de quitter la ville. Vous êtes sur la place du village.
-        Où voulez-vous aller ? Utilisez les boutons ci-dessus.
-      </div>
-    </div>
-    <!-- 
-      On charge maintenant le JS compilé depuis TypeScript.
-      "type="module"" permet d'utiliser les imports/exports ES6.
-    -->
-    <script type="module" src="./dist/game.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
